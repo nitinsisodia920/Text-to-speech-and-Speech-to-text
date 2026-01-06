@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VoiceFlow</h1>
+        <p class="subtitle">Transform your words with AI-powered speech technology</p>
+
+        <div class="mode-switch">
+            <div class="mode-card active" data-mode="tts">
+                <span class="mode-icon">🗣️</span>
+                <div class="mode-title">Text to Speech</div>
+                <div class="mode-desc">Convert written text into natural speech</div>
+            </div>
+            <div class="mode-card" data-mode="stt">
+                <span class="mode-icon">🎤</span>
+                <div class="mode-title">Speech to Text</div>
+                <div class="mode-desc">Transcribe your voice into written text</div>
+            </div>
+        </div>
+
+        <div class="content-area active" id="tts-content">
+            <textarea id="textInput" placeholder="Type your message here and I'll speak it for you..."></textarea>
+            <div class="controls">
+                <select id="voiceSelect">
+                    <option value="">Choose a voice...</option>
+                </select>
+                <button class="btn-primary" id="speakBtn">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                    </svg>
+                    <span>Speak Text</span>
+                </button>
+                <button class="btn-secondary" id="stopBtn" disabled>
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/>
+                    </svg>
+                    <span>Stop</span>
+                </button>
+            </div>
+            <div class="status" id="ttsStatus"></div>
+        </div>
+
+        <div class="content-area" id="stt-content">
+            <textarea id="transcriptOutput" placeholder="Your speech will appear here as you talk..." readonly></textarea>
+            <div class="controls">
+                <button class="btn-primary" id="recordBtn">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                    </svg>
+                    <span>Start Recording</span>
+                </button>
+                <button class="btn-secondary" id="clearBtn">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                    </svg>
+                    <span>Clear Text</span>
+                </button>
+            </div>
+            <div class="status" id="sttStatus"></div>
+        </div>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
